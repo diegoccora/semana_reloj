@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="slider" src="imagen_s6/slider1.jpg" width="100%" height="50%">
+    <button id="btnAvanzar" type="button">Avanzar</button>
+    <button id="btnRetroceder" type="button">Retroceder</button>
+</body>
+
+
+
+<script>
+
+    let botonAvanzar = document.getElementById("btnAvanzar");
+    let botonRetroceder = document.getElementById("btnRetroceder");
+    let contador =1;
+    let imagen = document.getElementById("slider");
+
+    botonAvanzar.addEventListener("click",fn_avanzar);
+    botonRetroceder.addEventListener("click",fn_retroceder);
+
+    
+    function fn_avanzar(){
+        contador++;
+        let formatoImagen = "imagen_s6/slider" + contador + ".jpg";
+        imagen.setAttribute("src", formatoImagen);
+        console.log("Probando.....");
+        
+
+        if(contador ===4){
+            contador=1;
+        }
+    }
+    
+
+
+
+    function fn_retroceder(){
+        contador--;
+        let formatoImagen = "imagen_s6/slider" + contador + ".jpg";
+        imagen.setAttribute("src", formatoImagen);
+        console.log("Probando.....");
+        if(contador ===1){
+            contador=1;
+        }
+    }
+
+</script>
+</html>
